@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "env": {
+    "VITE_SUPABASE_URL": "@vite_supabase_url",
+    "VITE_SUPABASE_ANON_KEY": "@vite_supabase_anon_key",
+    "VITE_POLLINATIONS_API_KEY": "@vite_pollinations_api_key",
+    "VITE_CLOUDINARY_CLOUD_NAME": "@vite_cloudinary_cloud_name",
+    "VITE_CLOUDINARY_UPLOAD_PRESET": "@vite_cloudinary_upload_preset"
+  },
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "http://localhost:5000/api/:match*"
+    }
+  ],
+  "functions": {
+    "server/src/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
